@@ -1,0 +1,80 @@
+.node {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    outline: 1px solid #D3D3D3; /* Light gray border */
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.node-start {
+    background-color: #7FFF00; /* Bright green */
+}
+
+.node-end {
+    background-color: #DC143C; /* Deep red */
+}
+
+.node-visited {
+    animation: visitedAnimation 1.5s ease forwards;
+    background-color: rgba(147, 112, 219, 0.75); /* Light purple */
+}
+
+@keyframes visitedAnimation {
+    0% {
+        transform: scale(0.3);
+        background-color: rgba(75, 0, 130, 0.75); /* Indigo */
+        border-radius: 50%;
+    }
+    50% {
+        background-color: rgba(138, 43, 226, 0.75); /* Blue violet */
+    }
+    75% {
+        transform: scale(1.2);
+        background-color: rgba(147, 112, 219, 0.75); /* Light purple */
+    }
+    100% {
+        transform: scale(1);
+        background-color: rgba(147, 112, 219, 0.75);
+    }
+}
+
+.node-wall {
+    background-color: #696969; /* Dark gray */
+    outline: 1px solid #696969;
+    animation: wallAnimation 0.5s ease forwards;
+}
+
+@keyframes wallAnimation {
+    0% {
+        transform: scale(0.3);
+        background-color: #4F4F4F; /* Darker gray */
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: #4F4F4F;
+    }
+    100% {
+        transform: scale(1.0);
+        background-color: #4F4F4F;
+    }
+}
+
+.node-shortest-path {
+    animation: shortestPath 1.5s ease forwards;
+}
+
+@keyframes shortestPath {
+    0% {
+        transform: scale(0.6);
+        background-color: #FF8C00; /* Dark orange */
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: #FFA500; /* Bright orange */
+    }
+    100% {
+        transform: scale(1);
+        background-color: #FFA500;
+    }
+}
